@@ -35,10 +35,11 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  let arr = Array.from(Array(len * 2));
+  arr = arr.map((elem, index) => index + 1);
+  return arr.filter((n) => n % 2 !== 0);
 }
-
 
 /**
  * Returns the doubled array - elements of the specified array
