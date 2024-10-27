@@ -309,10 +309,13 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
-function get3TopItems(/* arr */) {
-  throw new Error('Not implemented');
+function get3TopItems(arr) {
+  function sorted(a, b) {
+    return a - b;
+  }
+  const newArray = arr.sort(sorted).reverse();
+  return newArray.length > 3 ? newArray.slice(0, 3) : newArray;
 }
-
 
 /**
  * Returns the number of positive numbers from specified array
