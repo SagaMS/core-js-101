@@ -452,9 +452,19 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  *    ]
  */
-function sortCitiesArray(/* arr */) {
-  throw new Error('Not implemented');
+function sortCitiesArray(arr) {
+  function sorted(a, b) {
+    if (a.country > b.country || a.city > b.city) {
+      return 1;
+    } else if (a.country < b.country || a.city < b.city) {
+      return -1;
+    }
+    return 0;
+  }
+  const newArray = arr.sort(sorted);
+  return newArray;
 }
+
 
 /**
  * Creates an identity matrix of the specified size
